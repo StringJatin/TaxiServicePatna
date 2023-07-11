@@ -1,0 +1,51 @@
+.menu-icon {
+    display: none;
+  }
+  
+  @media (max-width: 768px) {
+    .menu-icon {
+      display: block;
+      cursor: pointer;
+    }
+    .navbar{
+        border-radius: 20px;
+        transition: 0.2s ease;
+    }
+  
+    .h-menu {
+      display: none;
+      color: black;
+      position: absolute;
+      top: 37rem;
+      width: 100%;
+      right: 0.02rem;
+      flex-direction: column;
+      background-color: grey; /* Updated background color */
+    }
+  
+    .h-menu.active {
+      display: flex;
+      
+    }
+  
+    .h-menu li {
+      margin-bottom: 1rem;
+      
+    }
+  
+    .h-menu li a {
+      color: black; /* Text color */
+      text-decoration: none;
+      padding: 0.5rem;
+   
+      transition: background-color 0.3s ease; /* Transition effect */
+    }
+  
+    .h-menu li a:hover {
+      background-color:#f5d020; /* Hover background color */
+      color: black; /* Hover text color */
+      border-radius: 20px;
+      padding: 12px;
+    }
+  }
+  

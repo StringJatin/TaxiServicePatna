@@ -1,0 +1,62 @@
+import React, { useState } from 'react';
+import logo from '../assets/logo.webp';
+import { BiMenuAltRight, BiX } from 'react-icons/bi';
+import "../Frontend/Navbar.css";
+
+const Navbar = () => {
+  const [menuOpen, setMenuOpen] = useState(false);
+
+  const handleMenuClick = () => {
+    setMenuOpen(!menuOpen);
+  };
+
+  return (
+    <header>
+      <a href="#" className="logo">
+        <img src={logo} alt="" />
+      </a>
+      <div className={`menu-icon ${menuOpen ? 'active' : ''}`} onClick={handleMenuClick}>
+        {menuOpen ? <BiX size={30} /> : <BiMenuAltRight size={30} />}
+      </div>
+      <div className={`h-menu ${menuOpen ? 'active' : ''}`}>
+        <ul className="navbar">
+          <li>
+            <a href="#home" onClick={handleMenuClick}>
+              Home
+            </a>
+          </li>
+          <li>
+            <a href="#ride" onClick={handleMenuClick}>
+              Ride
+            </a>
+          </li>
+          <li>
+            <a href="#services" onClick={handleMenuClick}>
+              Services
+            </a>
+          </li>
+          <li>
+            <a href="#about" onClick={handleMenuClick}>
+              About
+            </a>
+          </li>
+          <li>
+            <a href="#reviews" onClick={handleMenuClick}>
+              Reviews
+            </a>
+          </li>
+        </ul>
+      </div>
+      <div className="header-btn">
+        <a href="#" className="sign-up">
+          SignUp
+        </a>
+        <a href="#" className="sign-in">
+          SignIn
+        </a>
+      </div>
+    </header>
+  );
+};
+
+export default Navbar;
