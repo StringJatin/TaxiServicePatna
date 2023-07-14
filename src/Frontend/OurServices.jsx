@@ -10,7 +10,7 @@ const OurServices = () => {
     
     <div className="servicesContainer">
         <div className="servicesHeading">
-        <h2 className='servicesTitle'>Book taxi services from SavariMithilaKi Web/App</h2>
+        <h2 className='servicesTitle'>Book taxi services from Patna Web/App</h2>
         <p className='servicesPara' >Your everyday travel partner - AC Cabs for point to point travel</p>
         </div>
         <div className="cardContainer">
