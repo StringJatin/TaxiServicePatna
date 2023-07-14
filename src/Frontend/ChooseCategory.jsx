@@ -6,7 +6,16 @@ import car1 from "../assets/car/choti1.png"
 import car2 from "../assets/car/badi1.png"
 import car3 from "../assets/car/family1.png"
 import { Link } from 'react-router-dom'
-const ChooseCategory = () => {
+const ChooseCategory = ({carCategory, setCarCategory}) => {
+  const handleChotiSawari=()=>{
+    setCarCategory("Mini Car");
+  }
+  const handleBadiSawari=()=>{
+    setCarCategory("Sedan Car")
+  }
+  const handleFamilySawari=()=>{
+    setCarCategory("SUV")
+  }
   return (<>
   <Navbar/>
   <h1 className='catheading'>Choose Category</h1>
@@ -22,7 +31,7 @@ const ChooseCategory = () => {
     <div className="para">
       <img src={car2} alt="" />
     </div>
-    <Link to="/CustomerDetails"><button className="btn">Book Now</button></Link>
+    <Link to="/CustomerDetails"><button className="btn" onClick={handleChotiSawari} >Book Now</button></Link>
     
   </div>
   
@@ -37,7 +46,7 @@ const ChooseCategory = () => {
     <div className="para">
       <img src={car1} alt="" />
     </div>
-    <button className="btn">Book Now</button>
+    <button className="btn" onClick={handleBadiSawari} >Book Now</button>
     
   </div>
   
@@ -52,7 +61,7 @@ const ChooseCategory = () => {
     <div className="para">
       <img src={car3} alt="" />
     </div>
-    <button className="btn">Book Now</button>
+    <button className="btn" onClick={handleFamilySawari} >Book Now</button>
     
   </div>
   
