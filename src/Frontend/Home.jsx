@@ -1,29 +1,53 @@
-import React from 'react'
+import React, { Children } from 'react'
+import { useEffect, useState } from 'react';
 import '../Frontend/style.css'
 import hero from '../assets/hero.png'
 import {HiLocationMarker} from 'react-icons/hi'
 import {BsFillCarFrontFill , BsCheck2Square} from 'react-icons/bs'
+import Services from './Services'
+import About from './About'
+import Reviews from './Reviews'
+import Footer from './Footer'
+import Navbar from './Navbar'
+import { Link } from 'react-router-dom'
+import Autocomplete from 'react-google-autocomplete';
 
 const Home = ({pickupLocation,setPickupLocation,dropoffLocation, setDropoffLocation, pickupDate, setPickupDate, time, setTime}) => {
+
    
   return (
     <>
+     <Navbar />
     <section class="home" id="home">
         <div class="text">
-            <h1><span>Looking</span> for<br/> a Taxi in Toronto?</h1>
+            <h1 className=''><span>Looking</span> for<br/> a Taxi in Toronto?</h1>
             <p>Provides cost-effective yet most comfortable & reliable limo service in <br/>Toronto and GTA area. Our
                 up-to-date and well- maintained fleet provides you with plenty of options to choose from.
             </p>
         </div>
         <div class="form-container">
-            <form action="">
+            <form >
                 <div class="input-box">
                     <span>Pick up Location</span>
-                    <input type="search" name="" onChange={(e)=>setPickupLocation(e.target.value)} value={pickupLocation} id="" placeholder="Search places"/>
+                    <Autocomplete
+          apiKey="AIzaSyD5BMc9ScpaPKkEOyBFxUuUjWaGqDpMgu0" onChange={(e)=>setPickupLocation(e.target.value)}
+          onPlaceSelected={(place) => setPickupLocation(place.formatted_address)}
+          value={pickupLocation}
+          options={{
+            types: ['geocode'],
+          }}
+        />
                 </div>
                 <div class="input-box">
                     <span>Drop off Location</span>
-                    <input type="search"  onChange={(e)=>setDropoffLocation(e.target.value)} value={dropoffLocation} name="" id="" placeholder="Search places"/>
+                    <Autocomplete
+          apiKey="AIzaSyD5BMc9ScpaPKkEOyBFxUuUjWaGqDpMgu0" onChange={(e)=>setDropoffLocation(e.target.value)}
+          onPlaceSelected={(place) => setDropoffLocation(place.formatted_address)}
+          value={dropoffLocation}
+          options={{
+            types: ['geocode'],
+          }}
+        />
                 </div>
                 <div class="input-box">
                     <span>Pick-up Date</span>
@@ -33,7 +57,9 @@ const Home = ({pickupLocation,setPickupLocation,dropoffLocation, setDropoffLocat
                     <span>Pickup time</span>
                     <input type="time" onChange={(e)=>setTime(e.target.value)} value={time} name="" id="" placeholder=""/>
                 </div>
-                <input type="submit"  value="Submit" class="btn"/>
+                
+                <Link to={"/ChooseCategory"}><button className='btn'>Submit</button></Link>
+               
             </form>
         </div>
     </section>
@@ -44,8 +70,8 @@ const Home = ({pickupLocation,setPickupLocation,dropoffLocation, setDropoffLocat
         </div>
         <div class="ride-container">
             <div class="box">
-                <i class="bx bxs-map"><HiLocationMarker/></i>
-                <h2>
+              <div className='bx'>  <HiLocationMarker/></div>
+                <h2 className='' >
                     Choose route and days </h2>
                 <p>
                     Choose a route, date and time of your trip! Lorem ipsum dolor, sit amet consectetur adipisicing
@@ -53,7 +79,7 @@ const Home = ({pickupLocation,setPickupLocation,dropoffLocation, setDropoffLocat
                     necessitatibus provident fugit harum magni, laboriosam quidem alias dignissimos! </p>
             </div>
             <div class="box">
-                <i class='bx bxs-car'><BsFillCarFrontFill /></i>
+            <div className='bx bxs-car'>   <BsFillCarFrontFill /> </div>
                 <h2>
                     Choose a car and extras </h2>
                 <p>
@@ -62,7 +88,7 @@ const Home = ({pickupLocation,setPickupLocation,dropoffLocation, setDropoffLocat
                     laborum eum et at maxime tempora nemo odit rerum reprehenderit expedita.</p>
             </div>
             <div class="box">
-                <i class='bx bxs-check-square'><BsCheck2Square/></i>
+            <div className='bx'>   <BsCheck2Square/> </div>
                 <h2>
                     Complete the booking form </h2>
                 <p>
@@ -72,6 +98,10 @@ const Home = ({pickupLocation,setPickupLocation,dropoffLocation, setDropoffLocat
             </div>
         </div>
     </section>
+    <Services />
+      <About />
+      <Reviews />
+      <Footer />
     </>
   )
 }

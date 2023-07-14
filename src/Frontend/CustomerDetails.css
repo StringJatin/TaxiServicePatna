@@ -1,0 +1,135 @@
+.customerCard {
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 20px;
+  width: 350px;
+  display: flex;
+  flex-direction: column;
+  margin-top: -2rem;
+  box-shadow: 1px 4px 41px rgba(0,0,0,0.2);
+  margin-bottom: 2rem;
+}
+
+.title {
+  font-size: 24px;
+  font-weight: 600;
+  text-align: center;
+}
+
+.form {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.group {
+  position: relative;
+}
+
+.form .group label {
+  font-size: 14px;
+  color: rgb(99, 102, 102);
+  position: absolute;
+  top: -10px;
+  left: 10px;
+  background-color: #fff;
+  transition: all .3s ease;
+}
+
+.form .group input,
+.form .group textarea {
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  margin-bottom: 20px;
+  outline: 0;
+  width: 100%;
+  background-color: transparent;
+}
+
+.form .group input:placeholder-shown+ label, .form .group textarea:placeholder-shown +label {
+  top: 10px;
+  background-color: transparent;
+}
+
+.form .group input:focus,
+.form .group textarea:focus {
+  border-color: #3366cc;
+}
+
+.form .group input:focus+ label, .form .group textarea:focus +label,
+.form .group textarea.clicked  {
+  top: -10px;
+  left: 10px;
+  background-color: #fff;
+  color: #3366cc;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.form .group textarea {
+  resize: none;
+  height: 100px;
+}
+
+.form button {
+  background-color: #3366cc;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 10px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.form button:hover {
+  background-color: #27408b;
+}
+
+.customerContainer {
+  margin-top: 10rem;
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+}
+
+.mapCustomer .map-container {
+  width: 100%; /* Set the width to 100% in mobile view */
+}
+
+.disabled {
+  opacity: 0;
+}
+
+#passengers {
+  padding: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+@media screen and (max-width: 768px) {
+  .customerContainer {
+    margin-top: 5rem;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .customerCard {
+    margin-bottom: 2rem;
+  }
+
+  .mapCustomer {
+    position: relative;
+    width: 100%;
+    height: 300px;
+    margin-bottom: 7rem;
+  }
+
+  .map-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
+}
