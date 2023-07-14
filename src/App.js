@@ -11,6 +11,9 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import ChooseCategory from './Frontend/ChooseCategory';
 import Sample from './Frontend/Sample';
 import CustomerDetails from './Frontend/CustomerDetails';
+import AboutUs from './Frontend/AboutUs';
+import ContactUs from './Frontend/ContactUs';
+import OurServices from './Frontend/OurServices';
 
 
 function App() {
@@ -31,6 +34,9 @@ function App() {
         <Route path="/" element={<Home pickupLocation={pickupLocation} setPickupLocation={setPickupLocation} dropoffLocation={dropoffLocation} setDropoffLocation={setDropoffLocation} pickupDate={pickupDate} setPickupDate={setPickupDate} time={time} setTime={setTime} />}/>
         <Route path="/ChooseCategory" element={<ChooseCategory carCategory={carCategory} setCarCategory={setCarCategory} />}/>
         <Route path='/CustomerDetails' element={<CustomerDetails pickupLocation={pickupLocation}  dropoffLocation={dropoffLocation} pickupDate={pickupDate} time={time} carCategory={carCategory} Name={Name} setName={setName} Email={Email} setEmail={setEmail} passengers={passengers} setPassengers={setPassengers} phone={phone} setPhone={setPhone} />}/>
+        <Route path='/AboutUs' element={<AboutUs/>}/>
+        <Route path="/ContactUs" element={<ContactUs/>}/>
+        <Route path='/OurServices' element={<OurServices/>}/>
         </Routes>
       </BrowserRouter>
 

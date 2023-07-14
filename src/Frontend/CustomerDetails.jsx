@@ -3,6 +3,7 @@ import '../Frontend/CustomerDetails.css';
 import Navbar from './Navbar';
 import Footer from './Footer';
 import { GoogleMap, DirectionsRenderer } from '@react-google-maps/api';
+import { Link } from 'react-router-dom';
 
 const CustomerDetails = ({ pickupLocation, dropoffLocation, Name, setName, setEmail, Email, passengers, setPassengers, phone, setPhone }) => {
   const [directions, setDirections] = useState(null);
@@ -118,7 +119,7 @@ const CustomerDetails = ({ pickupLocation, dropoffLocation, Name, setName, setEm
             <p> <strong>Phone Number:</strong>  {phone} </p>
             <p> <strong>Passsengers:</strong>  {passengers} </p>
             </div>
-            <button onClick={closeModal}>Close</button>
+            <Link to="/"><button onClick={closeModal}>Close</button></Link> 
           </div>
         </div>
       )}

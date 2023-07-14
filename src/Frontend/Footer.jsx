@@ -1,6 +1,6 @@
 import React from 'react'
 import { instagram, facebookcircle , linkedin , whatsapp } from 'boxicons';
-
+import { Link } from 'react-router-dom';
 
 const Footer = () => {
   return (
@@ -11,8 +11,8 @@ const Footer = () => {
                 <div class="footer-col">
                     <h4>company</h4>
                     <ul>
-                        <li><a href="#">about us</a></li>
-                        <li><a href="#">our services</a></li>
+                        <li><a href="#"><Link to="/AboutUs">about us</Link></a></li> 
+                       <li><a href="#"><Link to="/OurServices" > our services</Link> </a></li>
                         <li><a href="#">privacy policy</a></li>
                         <li><a href="#">Book now</a></li>
                     </ul>

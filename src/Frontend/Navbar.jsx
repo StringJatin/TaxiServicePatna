@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import logo from '../assets/logo.webp';
 import { BiMenuAltRight, BiX } from 'react-icons/bi';
 import "../Frontend/Navbar.css";
+import { Link } from 'react-router-dom'
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -13,7 +14,7 @@ const Navbar = () => {
   return (
     <header>
       <a href="#" className="logo">
-        <img src={logo} alt="" />
+       <Link to="/"> <img src={logo} alt="" /></Link>
       </a>
       <div className={`menu-icon ${menuOpen ? 'active' : ''}`} onClick={handleMenuClick}>
         {menuOpen ? <BiX size={30} /> : <BiMenuAltRight size={30} />}
@@ -21,29 +22,24 @@ const Navbar = () => {
       <div className={`h-menu ${menuOpen ? 'active' : ''}`}>
         <ul className="navbar">
           <li>
-            <a href="#home" onClick={handleMenuClick}>
+            <Link to="/"><a href="#home" onClick={handleMenuClick}>
               Home
-            </a>
+            </a></Link>
           </li>
           <li>
-            <a href="#ride" onClick={handleMenuClick}>
-              Ride
-            </a>
-          </li>
-          <li>
-            <a href="#services" onClick={handleMenuClick}>
+           <Link to="/OurServices"> <a href="#services" onClick={handleMenuClick}>
               Services
-            </a>
+            </a></Link>
           </li>
           <li>
-            <a href="#about" onClick={handleMenuClick}>
-              About
-            </a>
+            <Link to="/AboutUs"><a href="" onClick={handleMenuClick}>
+              About Us
+            </a></Link>
           </li>
           <li>
-            <a href="#reviews" onClick={handleMenuClick}>
-              Reviews
-            </a>
+           <Link to="/ContactUs" > <a href="#reviews" onClick={handleMenuClick}>
+              Contact Us
+            </a></Link>
           </li>
         </ul>
       </div>
