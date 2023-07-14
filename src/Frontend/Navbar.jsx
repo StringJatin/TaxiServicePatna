@@ -22,24 +22,29 @@ const Navbar = () => {
       <div className={`h-menu ${menuOpen ? 'active' : ''}`}>
         <ul className="navbar">
           <li>
-            <Link to="/"><a href="#home" onClick={handleMenuClick}>
-              Home
-            </a></Link>
+            <a href="#home" onClick={handleMenuClick}>
+            <Link to="/"> Home</Link>
+            </a>
           </li>
           <li>
-           <Link to="/OurServices"> <a href="#services" onClick={handleMenuClick}>
-              Services
-            </a></Link>
+            <a href="#services" onClick={handleMenuClick}>
+            <Link to="/OurServices">Services</Link>
+            </a>
           </li>
           <li>
-            <Link to="/AboutUs"><a href="" onClick={handleMenuClick}>
-              About Us
-            </a></Link>
+            <a href="" onClick={handleMenuClick}>
+            <Link to="/AboutUs"> About Us</Link>
+            </a>
           </li>
           <li>
-           <Link to="/ContactUs" > <a href="#reviews" onClick={handleMenuClick}>
-              Contact Us
-            </a></Link>
+            <a href="#reviews" onClick={handleMenuClick}>
+            <Link to="/ContactUs" > Contact Us </Link>
+            </a>
+          </li>
+          <li>
+            <a href="#" onClick={handleMenuClick}>
+              Blogs
+            </a>
           </li>
         </ul>
       </div>
