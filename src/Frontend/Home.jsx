@@ -20,8 +20,8 @@ const Home = ({pickupLocation,setPickupLocation,dropoffLocation, setDropoffLocat
      <Navbar />
     <section class="home" id="home">
         <div class="text">
-            <h1 className=''><span>Looking</span> for<br/> a Taxi in Toronto?</h1>
-            <p>Provides cost-effective yet most comfortable & reliable limo service in <br/>Toronto and GTA area. Our
+            <h1 className=''><span>Looking</span> for<br/> a Taxi in Patna?</h1>
+            <p>Provides cost-effective yet most comfortable & reliable Taxi service in <br/>Patna and near area. Our
                 up-to-date and well- maintained fleet provides you with plenty of options to choose from.
             </p>
         </div>
