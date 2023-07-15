@@ -110,7 +110,7 @@ const CustomerDetails = ({ pickupLocation, dropoffLocation, Name, setName, setEm
       {showModal && (
         <div className="modal">
           <div className="modal-content">
-            <h1>Your Trip Summary</h1>
+            <h1>Succesfully Booked</h1>
             <div className="customerDetailsModal">
             <p> <strong>PickUp Location:</strong>  {pickupLocation} </p>
             <p> <strong>Destination:</strong>  {dropoffLocation} </p>
