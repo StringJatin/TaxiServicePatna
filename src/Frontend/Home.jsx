@@ -57,7 +57,7 @@ const Home = ({pickupLocation,setPickupLocation,dropoffLocation, setDropoffLocat
                     <input type="time" onChange={(e)=>setTime(e.target.value)} value={time} name="" id="" placeholder=""/>
                 </div>
                 
-                <button className='btn' >Submit</button>
+               <Link to="/chooseCategory"><button className='btn' >Submit</button></Link> 
                
             </form>
         </div>
