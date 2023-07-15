@@ -1,8 +1,58 @@
-import React from 'react'
+import React, { useState } from 'react';
 import { instagram, facebookcircle , linkedin , whatsapp } from 'boxicons';
 import { Link } from 'react-router-dom';
-
+import "../Frontend/Footer.css"
+import wicon from "../assets/whatsapp-icon.png"
 const Footer = () => {
+    const [activeMenu, setActiveMenu] = useState('menu1');
+
+    const handleMenuClick = (menu) => {
+      setActiveMenu(menu);
+    };
+  
+    const renderData = () => {
+      if (activeMenu === 'menu1') {
+        return <div className='menu-contents'>
+            <ul>
+                <br />
+                <li>Saharsa</li>
+                <li>Patna</li>
+                <li>Madhubani</li>
+                <li>Muzaffarpur</li>
+                <li>Sitamarhi</li>
+                <li>Jaynagar</li>
+            </ul>
+        </div>;
+      } else if (activeMenu === 'menu2') {
+        return <div className='menu-contents'>
+        <ul>
+            <br />
+            <li>Hajipur</li>
+            <li>Patna</li>
+            <li>Madhubani</li>
+            <li>Samastipur</li>
+            <li>Chhapra</li>
+            <li>Motihari</li>
+        </ul>
+    </div>;
+      }
+      else if (activeMenu === 'menu3') {
+        return <div className='menu-contents'>
+        <ul>
+            <br />
+            <li>Saharsa</li>
+            <li>Khagaria</li>
+            <li>Lakhisarai</li>
+            <li>Muzaffarpur</li>
+            <li>Nawada</li>
+            <li>Jaynagar</li>
+        </ul>
+    </div>;
+      }
+      // Add more menu options and corresponding data here if needed
+      return null;
+    };
+
   return (
    <>
    <footer class="footer">
@@ -36,6 +86,7 @@ const Footer = () => {
                         <li><a href="#">Traveler</a></li>
                     </ul>
                 </div>
+                
                 <div class="footer-col">
                     <h4>follow us</h4>
                     <div class="social-links">
@@ -44,14 +95,52 @@ const Footer = () => {
                 <a href="#">     <box-icon name='instagram' type='logo' color='#ffffff' ></box-icon></a> 
                 <a href="#">   <box-icon name='facebook-circle' type='logo' color='#ffffff'></box-icon></a> 
                     </div>
+                    {/* Footer navtabs
+                    
+                    */}
+                   
+
                     <p class="copyright">&copy; Copyrights. All rights reserved.
                     </p>
                     <p class="copyright">Made with <i class="bx bxs-heart"> By
                             Webzyro Tech</i></p>
                 </div>
             </div>
+            <div className='footer-col'>
+        <h4>Popular Routes</h4>
+      <ul className="menu">
+        <li
+          className={`menu-item ${activeMenu === 'menu1' ? 'active' : ''}`}
+          onClick={() => handleMenuClick('menu1')}
+        >
+          From Darbhanga
+        </li>
+        <li
+          className={`menu-item ${activeMenu === 'menu2' ? 'active' : ''}`}
+          onClick={() => handleMenuClick('menu2')}
+        >
+          From Muzaffarpur
+        </li>
+        <li
+          className={`menu-item1 ${activeMenu === 'menu3' ? 'active' : ''}`}
+          onClick={() => handleMenuClick('menu3')}
+        >
+          From Patna
+        </li>
+        {/* Add more menu items here if needed */}
+      </ul>
+      <hr />
+      {renderData()}
+    </div>
         </div>
-        
+        <a
+      href="https://api.whatsapp.com/send?phone=19059294810"
+      target="_blank"
+      rel="noopener noreferrer"
+      className="whatsapp-float"
+    >
+      <img src={wicon} alt="WhatsApp" />
+    </a>
     </footer>
 </>
   )
