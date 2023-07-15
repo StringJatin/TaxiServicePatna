@@ -107,25 +107,25 @@ const Footer = () => {
                 </div>
             </div>
             <div className='footer-col'>
-        <h4>Popular Routes</h4>
+        <h4>Popular Routes From</h4>
       <ul className="menu">
         <li
           className={`menu-item ${activeMenu === 'menu1' ? 'active' : ''}`}
           onClick={() => handleMenuClick('menu1')}
         >
-          From Darbhanga
+          Darbhanga
         </li>
         <li
           className={`menu-item ${activeMenu === 'menu2' ? 'active' : ''}`}
           onClick={() => handleMenuClick('menu2')}
         >
-          From Muzaffarpur
+          Muzaffarpur
         </li>
         <li
           className={`menu-item1 ${activeMenu === 'menu3' ? 'active' : ''}`}
           onClick={() => handleMenuClick('menu3')}
         >
-          From Patna
+          Patna
         </li>
         {/* Add more menu items here if needed */}
       </ul>
