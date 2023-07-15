@@ -8,6 +8,7 @@ import car6 from '../assets/car/car6.jpg'
 import car7 from '../assets/car/car7.jpg'
 import car8 from '../assets/car/car8.jpg'
 import car9 from '../assets/car/car9.jpg'
+import { Link } from 'react-router-dom'
 const Services = () => {
 
   return (
@@ -26,7 +27,7 @@ const Services = () => {
                     </div>
                     <p>3 Pax</p>
                     <h3>No Preferencs</h3>
-                    <a href="#" class="btn">Book Now</a>
+                  <Link to="/"> <a href="#" class="btn">Book Now</a></Link> 
                 </div>
                 <div class="box">
                     <div class="box-img">

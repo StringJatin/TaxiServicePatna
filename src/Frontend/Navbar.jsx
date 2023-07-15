@@ -41,11 +41,6 @@ const Navbar = () => {
             <Link to="/ContactUs" > Contact Us </Link>
             </a>
           </li>
-          <li>
-            <a href="#" onClick={handleMenuClick}>
-              Blogs
-            </a>
-          </li>
         </ul>
       </div>
       <div className="header-btn">

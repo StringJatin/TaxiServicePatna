@@ -14,7 +14,7 @@ import CustomerDetails from './Frontend/CustomerDetails';
 import AboutUs from './Frontend/AboutUs';
 import ContactUs from './Frontend/ContactUs';
 import OurServices from './Frontend/OurServices';
-
+import ScrollToTop from './Frontend/ScrollToTop';
 
 function App() {
   const [pickupLocation, setPickupLocation] = useState('');
@@ -30,6 +30,7 @@ function App() {
   return (
     <>
       <BrowserRouter>
+      <ScrollToTop />
         <Routes>
         <Route path="/" element={<Home pickupLocation={pickupLocation} setPickupLocation={setPickupLocation} dropoffLocation={dropoffLocation} setDropoffLocation={setDropoffLocation} pickupDate={pickupDate} setPickupDate={setPickupDate} time={time} setTime={setTime} />}/>
         <Route path="/ChooseCategory" element={<ChooseCategory carCategory={carCategory} setCarCategory={setCarCategory} />}/>

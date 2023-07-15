@@ -5,7 +5,7 @@ import Footer from './Footer';
 import { GoogleMap, DirectionsRenderer } from '@react-google-maps/api';
 import { Link } from 'react-router-dom';
 
-const CustomerDetails = ({ pickupLocation, dropoffLocation, Name, setName, setEmail, Email, passengers, setPassengers, phone, setPhone }) => {
+const CustomerDetails = ({ pickupLocation, dropoffLocation, Name, setName, setEmail, Email, passengers, setPassengers, phone, setPhone, carCategory }) => {
   const [directions, setDirections] = useState(null);
   const [distance, setDistance] = useState(null);
   const [travelTime, setTravelTime] = useState(null);
@@ -110,7 +110,7 @@ const CustomerDetails = ({ pickupLocation, dropoffLocation, Name, setName, setEm
       {showModal && (
         <div className="modal">
           <div className="modal-content">
-            <h1>Succesfully Booked</h1>
+            <h1>Succesfully Booked!</h1>
             <div className="customerDetailsModal">
             <p> <strong>PickUp Location:</strong>  {pickupLocation} </p>
             <p> <strong>Destination:</strong>  {dropoffLocation} </p>
@@ -118,6 +118,7 @@ const CustomerDetails = ({ pickupLocation, dropoffLocation, Name, setName, setEm
             <p> <strong>Email:</strong>  {Email} </p>
             <p> <strong>Phone Number:</strong>  {phone} </p>
             <p> <strong>Passsengers:</strong>  {passengers} </p>
+            <p> <strong>Car Category Selected:</strong>  {carCategory} </p>
             </div>
             <Link to="/"><button onClick={closeModal}>Close</button></Link> 
           </div>

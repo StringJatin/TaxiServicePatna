@@ -13,8 +13,7 @@ import { Link } from 'react-router-dom'
 import Autocomplete from 'react-google-autocomplete';
 
 const Home = ({pickupLocation,setPickupLocation,dropoffLocation, setDropoffLocation, pickupDate, setPickupDate, time, setTime}) => {
-
-   
+    const [formSubmitted, setFormSubmitted] = useState(false);
   return (
     <>
      <Navbar />
@@ -58,7 +57,7 @@ const Home = ({pickupLocation,setPickupLocation,dropoffLocation, setDropoffLocat
                     <input type="time" onChange={(e)=>setTime(e.target.value)} value={time} name="" id="" placeholder=""/>
                 </div>
                 
-                <Link to={"/ChooseCategory"}><button className='btn'>Submit</button></Link>
+                <button className='btn' >Submit</button>
                
             </form>
         </div>
