@@ -46,7 +46,7 @@ const ChooseCategory = ({carCategory, setCarCategory}) => {
     <div className="para">
       <img src={car1} alt="" />
     </div>
-    <button className="btn" onClick={handleBadiSawari} >Book Now</button>
+    <Link to="/CustomerDetails"> <button className="btn" onClick={handleBadiSawari} >Book Now</button></Link>
     
   </div>
   
@@ -61,7 +61,7 @@ const ChooseCategory = ({carCategory, setCarCategory}) => {
     <div className="para">
       <img src={car3} alt="" />
     </div>
-    <button className="btn" onClick={handleFamilySawari} >Book Now</button>
+    <Link to="/CustomerDetails"><button className="btn" onClick={handleFamilySawari} >Book Now</button></Link>
     
   </div>
   
